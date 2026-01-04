@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Security.Cryptography;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CsharpProgram11
 {
@@ -73,39 +74,98 @@ namespace CsharpProgram11
             //        }
             //    }
             //}
-                                       //Task4 
+            //Task4 
+            //    Console.WriteLine("How many numbers do you want to enter");
+            //    int n = int.Parse(Console.ReadLine());
+            //    int[] numbers = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.WriteLine("Enter the number");
+            //        numbers[i] = int.Parse(Console.ReadLine());
+            //    }
+            //    int positivecount = 0;
+            //    int negativecount = 0;
+
+            //        for (int i = 0; i < n; i++)
+            //        {
+            //        if (numbers[i] > 0)
+
+            //        {
+            //            positivecount++;
+            //        }
+            //        else if (numbers[i] < 0)
+            //        {
+            //            negativecount++;
+            //        }
+
+
+
+
+            //        }
+            //    Console.WriteLine("positive number count:" + positivecount);
+            //    Console.WriteLine("negative number count:"+ negativecount);
+            //    }
+
+            //    }
+            //}
+
+            //Task 5
             Console.WriteLine("How many numbers do you want to enter");
             int n = int.Parse(Console.ReadLine());
             int[] numbers = new int[n];
+            // Read numbers
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine("Enter the number");
                 numbers[i] = int.Parse(Console.ReadLine());
             }
-            int positivecount = 0;
-            int negativecount = 0;
-           
-                for (int i = 0; i < n; i++)
+            // create new array to store unique numbers
+            int[] uniquenumbers = new int[n];
+            //This variable keeps track of how many unique numbers we have added
+            int uniqueCount = 0;
+
+            // remove duplicates
+            // loop through each number in the original array
+            for (int i = 0; i < n; i++)
+            {
+                // assume the current number is not a duplicate
+                bool isDuplicate = false;
+                // Check if the current number already exists in uniquenumbers
+                for (int j = 0; j < uniqueCount; j++)
                 {
-                if (numbers[i] > 0)
-
+                    // Compare current number with stored unique numbers
+                    if (numbers[i] == uniquenumbers[j])
+                    {
+                        // If found, mark it as duplicate
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+                // If the number is not a duplicate, add it to uniquenumbers
+                if (!isDuplicate)
                 {
-                    positivecount++;
+                    uniquenumbers[uniqueCount] = numbers[i];
+                    uniqueCount++;
                 }
-                else if (numbers[i] < 0)
+                }
+                   Console.Write("Unique values list: [ ");
+
+                   for (int i = 0; i < uniqueCount; i++)
+            {
+                   Console.Write(uniquenumbers[i]);
+
+                if (i < uniqueCount - 1)
                 {
-                    negativecount++;
+                    Console.Write(", ");
                 }
-
-
-
-                    
-                }
-            Console.WriteLine("positive number count:" + positivecount);
-            Console.WriteLine("negative number count:"+ negativecount);
             }
 
-            }
+            Console.WriteLine(" ]");
+        }
+        }
         }
     
+
+            
+
 
