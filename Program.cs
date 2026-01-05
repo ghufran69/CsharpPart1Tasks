@@ -112,60 +112,49 @@ namespace CsharpProgram11
             //Task 5
             Console.WriteLine("How many numbers do you want to enter");
             int n = int.Parse(Console.ReadLine());
+
             int[] numbers = new int[n];
-            // Read numbers
+
             for (int i = 0; i < n; i++)
+
             {
-                Console.WriteLine("Enter the number");
+                Console.WriteLine("enter number");
                 numbers[i] = int.Parse(Console.ReadLine());
             }
-            // create new array to store unique numbers
-            int[] uniquenumbers = new int[n];
-            //This variable keeps track of how many unique numbers we have added
-            int uniqueCount = 0;
 
-            // remove duplicates
-            // loop through each number in the original array
+            int[] uniquenumbers = new int[n];
+            int uniqueCount = 0;
             for (int i = 0; i < n; i++)
             {
-                // assume the current number is not a duplicate
                 bool isDuplicate = false;
-                // Check if the current number already exists in uniquenumbers
+
                 for (int j = 0; j < uniqueCount; j++)
                 {
-                    // Compare current number with stored unique numbers
                     if (numbers[i] == uniquenumbers[j])
                     {
-                        // If found, mark it as duplicate
                         isDuplicate = true;
                         break;
                     }
                 }
-                // If the number is not a duplicate, add it to uniquenumbers
-                if (!isDuplicate)
+
+                if (isDuplicate == false)
                 {
                     uniquenumbers[uniqueCount] = numbers[i];
                     uniqueCount++;
                 }
-                }
-                   Console.Write("Unique values list: [ ");
-
-                   for (int i = 0; i < uniqueCount; i++)
-            {
-                   Console.Write(uniquenumbers[i]);
-
-                if (i < uniqueCount - 1)
-                {
-                    Console.Write(", ");
-                }
             }
+            Console.Write("[ ");
+            for (int i = 0; i < uniqueCount; i++)
+            {
+                Console.Write(uniquenumbers[i] + " ");
+            }
+            Console.Write("]");
 
-            Console.WriteLine(" ]");
         }
-        }
-        }
-    
 
-            
+    }
+}
+
+
 
 
