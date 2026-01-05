@@ -156,37 +156,80 @@ namespace CsharpProgram11
             //}
 
             //Task6
-            Console.WriteLine("Enter how many numbers do you want to enter");
+            //Console.WriteLine("Enter how many numbers do you want to enter");
+            //int n = int.Parse(Console.ReadLine());
+            //Console.WriteLine("primenumber:");
+
+            //for (int i= 2;i<n;i++)
+            //{
+
+            //    bool isprime = true;
+            //    for (int j = 2; j < i; j++)
+            //    {
+
+            //        if (i % j == 0)
+            //        {
+            //            isprime = false;
+            //            break;
+            //        }
+            //    }
+            //    if (isprime)
+            //    {
+            //        Console.WriteLine(i + " "); 
+            //    }
+
+            Console.WriteLine("Enter how many numbers in first list");
             int n = int.Parse(Console.ReadLine());
-            Console.WriteLine("primenumber:");
+            int[] firstlist = new int[n];
+            for (int i = 0; i < n; i++)
 
-            for (int i= 2;i<n;i++)
             {
-
-                bool isprime = true;
-                for (int j = 2; j < i; j++)
-                {
-
-                    if (i % j == 0)
-                    {
-                        isprime = false;
-                        break;
-                    }
-                }
-                if (isprime)
-                {
-                    Console.WriteLine(i + " "); 
-                }
-                
-                    
-              
-
-                   
-
-                    
-
-                }
+                Console.WriteLine("Enter numbers");
+                firstlist[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Enter how many numbers in second list");
+            int N = int.Parse(Console.ReadLine());
+            int[] secondlist = new int[N];
+            for (int j = 0; j < N; j++)
+            {
+                Console.WriteLine("Enter numbers");
+                secondlist[j] = int.Parse(Console.ReadLine());
 
             }
+
+            int[] mergelist = new int[n + N];
+
+            int index = 0;
+            for (int i = 0; i < n; i++)
+
+            {
+                mergelist[index] = firstlist[i];
+                index++;
+            }
+            for (int j = 0; j < N; j++)
+            {
+                mergelist[index] = secondlist[j];
+                index++;
+            }
+
+            for (int i = 0; i < n+N; i++)
+            {
+                for (int j = i + 1; j < n +N; j++)
+                {
+                    if (mergelist[i] > mergelist[j])
+                    {
+                        int temp = mergelist[i];
+                        mergelist[i] = mergelist[j];
+                        mergelist[j] = temp;
+                    }
+                }
+
+
+            }
+            for (int i = 0; i < n + N; i++)
+                Console.Write(mergelist[i] + " ");
+
         }
     }
+
+}
