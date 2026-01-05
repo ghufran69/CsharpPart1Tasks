@@ -110,51 +110,83 @@ namespace CsharpProgram11
             //}
 
             //Task 5
-            Console.WriteLine("How many numbers do you want to enter");
+            //            Console.WriteLine("How many numbers do you want to enter");
+            //            int n = int.Parse(Console.ReadLine());
+
+            //            int[] numbers = new int[n];
+
+            //            for (int i = 0; i < n; i++)
+
+            //            {
+            //                Console.WriteLine("enter number");
+            //                numbers[i] = int.Parse(Console.ReadLine());
+            //            }
+
+            //            int[] uniquenumbers = new int[n];
+            //            int uniqueCount = 0;
+            //            for (int i = 0; i < n; i++)
+            //            {
+            //                bool isDuplicate = false;
+
+            //                for (int j = 0; j < uniqueCount; j++)
+            //                {
+            //                    if (numbers[i] == uniquenumbers[j])
+            //                    {
+            //                        isDuplicate = true;
+            //                        break;
+            //                    }
+            //                }
+
+            //                if (isDuplicate == false)
+            //                {
+            //                    uniquenumbers[uniqueCount] = numbers[i];
+            //                    uniqueCount++;
+            //                }
+            //            }
+            //            Console.Write("[ ");
+            //            for (int i = 0; i < uniqueCount; i++)
+            //            {
+            //                Console.Write(uniquenumbers[i] + " ");
+            //            }
+            //            Console.Write("]");
+
+            //        }
+
+            //    }
+            //}
+
+            //Task6
+            Console.WriteLine("Enter how many numbers do you want to enter");
             int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("primenumber:");
 
-            int[] numbers = new int[n];
-
-            for (int i = 0; i < n; i++)
-
+            for (int i= 2;i<n;i++)
             {
-                Console.WriteLine("enter number");
-                numbers[i] = int.Parse(Console.ReadLine());
-            }
 
-            int[] uniquenumbers = new int[n];
-            int uniqueCount = 0;
-            for (int i = 0; i < n; i++)
-            {
-                bool isDuplicate = false;
-
-                for (int j = 0; j < uniqueCount; j++)
+                bool isprime = true;
+                for (int j = 2; j < i; j++)
                 {
-                    if (numbers[i] == uniquenumbers[j])
+
+                    if (i % j == 0)
                     {
-                        isDuplicate = true;
+                        isprime = false;
                         break;
                     }
                 }
-
-                if (isDuplicate == false)
+                if (isprime)
                 {
-                    uniquenumbers[uniqueCount] = numbers[i];
-                    uniqueCount++;
+                    Console.WriteLine(i + " "); 
                 }
-            }
-            Console.Write("[ ");
-            for (int i = 0; i < uniqueCount; i++)
-            {
-                Console.Write(uniquenumbers[i] + " ");
-            }
-            Console.Write("]");
+                
+                    
+              
 
+                   
+
+                    
+
+                }
+
+            }
         }
-
     }
-}
-
-
-
-
